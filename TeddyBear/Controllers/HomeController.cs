@@ -17,6 +17,7 @@ namespace TeddyBear.Controllers
         public IActionResult Index()
         {
             ViewBag.lstCateOfProductOutstand = HomeRepo.GetCateOfProductOutstand();
+            ViewBag.testGit = "abc";
             return View();
         }
 
