@@ -1,0 +1,228 @@
+﻿@{
+    Layout = null;
+    List<TeddyBear.Models.Category> lstCateMain = TeddyBear.Repository.CategoryRepo.Instance().GetCateMain();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="~/client/favico.svg">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="developed" content="mexuvo">
+    <meta name="published" content="quomodosoft">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="~/client/logo192.png">
+    <link rel="manifest" href="~/client/manifest.json">
+    <title>ShopO</title>
+    <script defer="defer" src="~/client/static/js/main.85de4ea6.js"></script>
+    <link href="~/client/static/css/main.c2785869.css" rel="stylesheet">
+</head>
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" class="home-four">
+    <div class="w-full overflow-x-hidden">
+        <header class="  header-section-wrapper relative">
+            @*<div class="w-full bg-white h-10 border-b border-qgray-border quomodo-shop-top-bar">
+            <div class="container-x mx-auto h-full">
+            <div class="flex justify-between items-center h-full">
+            <div class="topbar-nav">
+            <ul class="flex space-x-6">
+            <li>
+            <a href="/">
+            <span class="text-xs leading-6 text-qblack font-500">Account</span>
+            </a>
+            </li>
+            <li><a href="/tracking-order"><span class="text-xs leading-6 text-qblack font-500">Track Order</span></a></li>
+            <li><a href="/faq"><span class="text-xs leading-6 text-qblack font-500">Support</span></a></li>
+            </ul>
+            </div><div class="topbar-dropdowns sm:block hidden"><div class="flex space-x-6"><div class="country-select flex space-x-1 items-center"><div><img src="~/client/assets/images/country-logo-16x16.png" width="16" height="16" alt="country logo" class="overflow-hidden rounded-full"></div><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>United State</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">United State</li><li class="">Bangladesh</li><li class="">India</li></ul></div></div><div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div></div><div class="currency-select flex space-x-1 items-center"><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>USD</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">USD</li><li class="">BDT</li></ul></div></div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div><div class="language-select flex space-x-1 items-center"><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>Bangla</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">Bangla</li><li class="">english</li></ul></div></div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div></div></div>
+            </div>
+            </div>
+            </div>*@
+            <div class="w-full h-[86px] bg-white quomodo-shop-middle-bar lg:block hidden">
+                <div class="container-x mx-auto h-full">
+                    <div class="relative h-full">
+                        <div class="flex justify-between items-center h-full">
+                            <div><a href="/"><img width="152" height="36" src="~/client/assets/images/logo-4.svg" alt="logo"></a></div><div class="w-[517px] h-[44px]">
+                                <div class="w-full h-full flex items-center  border border-qgray-border bg-white search-com">
+                                    <div class="flex-1 bg-red-500 h-full">
+                                        <form action="#" class="h-full">
+                                            <input type="text" style="font-size:14px" class="search-input" placeholder="Search Product...">
+                                        </form>
+                                    </div>
+                                    <div class="w-[1px] h-[22px] bg-qgray-border"></div>
+
+                                    <button class=" w-[93px] h-full text-sm font-600 search-btn" type="button">Search</button>
+                                </div>
+                            </div>
+                            <div class="flex space-x-6 items-center">
+                                <div class="cart-wrapper group relative py-4">
+                                    <div class="cart relative cursor-pointer">
+                                        <a href="/cart"><span><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.1568 5.1772C16.0284 4.84626 15.7343 4.81766 14.2887 4.81766H13.0875V4.2947C13.0875 3.48165 12.9716 2.91374 12.6899 2.32949C12.1804 1.2713 11.3272 0.531797 10.2213 0.188601C9.68279 0.0251747 8.87923 -0.0442816 8.39047 0.0292604C7.03602 0.241715 5.88039 1.09562 5.29223 2.31315C5.00642 2.90966 4.89045 3.48165 4.89045 4.2947V4.82175H3.68511C2.23954 4.82175 1.94546 4.85035 1.81705 5.19354C1.75078 5.41008 1.12948 10.0637 0.864385 12.0697C0.632431 13.8184 0.417045 15.469 0.259648 16.711C-0.0137267 18.8519 -0.00544266 18.8846 0.00284141 18.9214V18.9255C0.0401198 19.0644 0.408761 19.428 0.520596 19.5342L1.00521 20H16.9438L17.3041 19.6854C17.4657 19.5424 18 19.0562 18 18.8152C18 18.6517 16.1899 5.27117 16.1568 5.1772ZM16.6911 18.5046C16.687 18.5332 16.6538 18.619 16.5958 18.6803L16.513 18.7702H1.46498L1.2496 18.5414L2.09871 12.2863C2.39694 10.0596 2.66203 8.11888 2.81943 6.95855C2.88984 6.45193 2.92298 6.19453 2.93955 6.06788C3.49872 6.06379 5.94252 6.0597 8.98278 6.0597H15.0302L15.0384 6.10465C15.1047 6.4315 16.6621 18.141 16.6911 18.5046ZM6.1372 4.82175V4.35598C6.1372 4.04139 6.17862 3.6083 6.22418 3.40811C6.46856 2.38669 7.30111 1.5573 8.34076 1.29173C8.77568 1.1855 9.48811 1.22228 9.92303 1.37753H9.92717C10.3828 1.5287 10.7556 1.77384 11.0994 2.14972C11.6544 2.74623 11.8408 3.28145 11.8408 4.27018V4.82175H6.1372Z" fill="black"></path></svg></span></a><span class="w-[18px] h-[18px] rounded-full bg-qh4-pink absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] text-qblack">
+                                            0
+                                        </span>
+                                    </div><div class="w-[300px] bg-white border-t-[3px] cart-wrappwer  absolute -right-[45px] top-11 z-50 hidden group-hover:block" style="box-shadow: rgba(0, 0, 0, 0.14) 0px 15px 50px 0px;">
+                                        <div class="w-full h-full">
+                                            <div class="product-items h-[310px] overflow-y-scroll">
+                                                <ul>
+                                                    <li class="w-full h-full flex">
+                                                        <div class="flex space-x-[6px] justify-center items-center px-4 my-[20px]">
+                                                            <div class="w-[65px] h-full"><img src="~/client/assets/images/product-img-1.jpg" alt="" class="w-full h-full object-contain"></div><div class="flex-1 h-full flex flex-col justify-center ">
+                                                                <p class="title mb-2 text-[13px] font-600 text-qblack leading-4 line-clamp-2 hover:text-blue-600">iPhone 12 Pro Max 128GB Golen colour</p><p class="price"><span class="offer-price text-qred font-600 text-[15px] ml-2">$38</span></p>
+                                                            </div>
+                                                        </div><span class="mt-[20px] mr-[15px] inline-flex cursor-pointer "><svg width="8" height="8" viewBox="0 0 8 8" fill="none" class="inline fill-current text-[#AAAAAA] hover:text-qred" xmlns="http://www.w3.org/2000/svg"><path d="M7.76 0.24C7.44 -0.08 6.96 -0.08 6.64 0.24L4 2.88L1.36 0.24C1.04 -0.08 0.56 -0.08 0.24 0.24C-0.08 0.56 -0.08 1.04 0.24 1.36L2.88 4L0.24 6.64C-0.08 6.96 -0.08 7.44 0.24 7.76C0.56 8.08 1.04 8.08 1.36 7.76L4 5.12L6.64 7.76C6.96 8.08 7.44 8.08 7.76 7.76C8.08 7.44 8.08 6.96 7.76 6.64L5.12 4L7.76 1.36C8.08 1.04 8.08 0.56 7.76 0.24Z"></path></svg></span>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="w-full h-full flex">
+                                                        <div class="flex space-x-[6px] justify-center items-center px-4 my-[20px]">
+                                                            <div class="w-[65px] h-full"><img src="~/client/assets/images/product-img-1.jpg" alt="" class="w-full h-full object-contain"></div><div class="flex-1 h-full flex flex-col justify-center ">
+                                                                <p class="title mb-2 text-[13px] font-600 text-qblack leading-4 line-clamp-2 hover:text-blue-600">iPhone 12 Pro Max 128GB Golen colour</p><p class="price"><span class="offer-price text-qred font-600 text-[15px] ml-2">$38</span></p>
+                                                            </div>
+                                                        </div><span class="mt-[20px] mr-[15px] inline-flex cursor-pointer "><svg width="8" height="8" viewBox="0 0 8 8" fill="none" class="inline fill-current text-[#AAAAAA] hover:text-qred" xmlns="http://www.w3.org/2000/svg"><path d="M7.76 0.24C7.44 -0.08 6.96 -0.08 6.64 0.24L4 2.88L1.36 0.24C1.04 -0.08 0.56 -0.08 0.24 0.24C-0.08 0.56 -0.08 1.04 0.24 1.36L2.88 4L0.24 6.64C-0.08 6.96 -0.08 7.44 0.24 7.76C0.56 8.08 1.04 8.08 1.36 7.76L4 5.12L6.64 7.76C6.96 8.08 7.44 8.08 7.76 7.76C8.08 7.44 8.08 6.96 7.76 6.64L5.12 4L7.76 1.36C8.08 1.04 8.08 0.56 7.76 0.24Z"></path></svg></span>
+                                                    </li>
+                                                </ul>
+                                            </div><div class="w-full px-4 mt-[20px] mb-[12px]"><div class="h-[1px] bg-[#F0F1F3]"></div></div><div class="product-actions px-4 mb-[30px]"><div class="total-equation flex justify-between items-center mb-[28px]"><span class="text-[15px] font-500 text-qblack">Subtotal</span><span class="text-[15px] font-500 text-qred ">$365</span></div><div class="product-action-btn"><a href="#"><div class="gray-btn w-full h-[50px] mb-[10px] "><span>View Cart</span></div></a><a href="#"><div class="w-full h-[50px]"><div class="yellow-btn"><span class="text-sm">Checkout Now</span></div></div></a></div></div><div class="w-full px-4 mt-[20px]"><div class="h-[1px] bg-[#F0F1F3]"></div></div><div class="flex justify-center py-[15px]"><p class="text-[13px] font-500 text-qgray">Get Return within <span class="text-qblack">30 days</span></p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="/profile"><span><svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.992 19.729C19.9004 18.043 19.438 16.4886 18.617 15.1176C17.6046 13.4237 16.2096 12.1244 14.4679 11.2475C14.0773 11.0522 13.878 10.9645 13.3878 10.7772L12.9334 10.6138L13.4954 10.1833C14.5476 9.38621 15.3408 8.08689 15.6118 6.70387C15.6955 6.28936 15.7035 5.22918 15.6317 4.78278C15.4643 3.77043 14.9582 2.70227 14.2766 1.92507C13.4356 0.976485 12.2439 0.30291 11.0084 0.079713C10.7971 0.0398565 10.1515 0 9.75289 0C9.60542 0 9.55361 0.00398565 9.53766 0.0079713H9.53368C9.49781 0.011957 9.42607 0.0239139 9.33838 0.0358709H9.32642C9.25468 0.0438422 9.17896 0.0557991 9.10323 0.0677561C8.1666 0.195297 7.01873 0.73336 6.25349 1.41092C5.27302 2.27581 4.59147 3.50339 4.38023 4.78278C4.3045 5.22918 4.31646 6.28936 4.40016 6.70387C4.67118 8.08689 5.46433 9.38621 6.51654 10.1833L7.07852 10.6138L6.62415 10.7772C6.13392 10.9645 5.93464 11.0522 5.54404 11.2475C3.80231 12.1244 2.40335 13.4237 1.39498 15.1176C0.569948 16.4926 0.107613 18.043 0.0159426 19.729L0 20H0.255082H1.1957H18.8123H19.4938H20.008L19.992 19.729ZM5.56397 4.98605C5.73934 3.92188 6.28537 2.95735 7.10642 2.25986C7.91949 1.57035 8.94779 1.19171 10 1.19171C10.2352 1.19171 10.4743 1.21164 10.7094 1.24751C13.1606 1.64607 14.8386 3.95775 14.444 6.39299C14.2686 7.45715 13.7226 8.42168 12.9016 9.11917C12.0885 9.80869 11.0602 10.1873 10.008 10.1873C9.77282 10.1873 9.53368 10.1674 9.29852 10.1315C6.84735 9.72898 5.16939 7.42128 5.56397 4.98605ZM2.54285 15.5281C3.73057 13.7146 5.31287 12.4751 7.25389 11.8414C8.17059 11.5424 9.09526 11.391 10.004 11.391C10.9127 11.391 11.8374 11.5424 12.7541 11.8414C14.6951 12.4751 16.2814 13.7146 17.4651 15.5281C18.047 16.4169 18.5134 17.6963 18.7086 18.8721H1.29932C1.49462 17.6963 1.96094 16.4169 2.54285 15.5281Z" fill="black"></path></svg></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="quomodo-shop-drawer lg:hidden block w-full h-[60px] bg-white">
+                <div class="w-full h-full flex justify-between items-center px-5">
+                    <div><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"></path></svg></div><div><a href="/"><img width="152" height="36" src="~/client/assets/images/logo-4.svg" alt="logo"></a></div><div class="cart relative cursor-pointer">
+                        <a href="/cart"><span><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.1568 5.1772C16.0284 4.84626 15.7343 4.81766 14.2887 4.81766H13.0875V4.2947C13.0875 3.48165 12.9716 2.91374 12.6899 2.32949C12.1804 1.2713 11.3272 0.531797 10.2213 0.188601C9.68279 0.0251747 8.87923 -0.0442816 8.39047 0.0292604C7.03602 0.241715 5.88039 1.09562 5.29223 2.31315C5.00642 2.90966 4.89045 3.48165 4.89045 4.2947V4.82175H3.68511C2.23954 4.82175 1.94546 4.85035 1.81705 5.19354C1.75078 5.41008 1.12948 10.0637 0.864385 12.0697C0.632431 13.8184 0.417045 15.469 0.259648 16.711C-0.0137267 18.8519 -0.00544266 18.8846 0.00284141 18.9214V18.9255C0.0401198 19.0644 0.408761 19.428 0.520596 19.5342L1.00521 20H16.9438L17.3041 19.6854C17.4657 19.5424 18 19.0562 18 18.8152C18 18.6517 16.1899 5.27117 16.1568 5.1772ZM16.6911 18.5046C16.687 18.5332 16.6538 18.619 16.5958 18.6803L16.513 18.7702H1.46498L1.2496 18.5414L2.09871 12.2863C2.39694 10.0596 2.66203 8.11888 2.81943 6.95855C2.88984 6.45193 2.92298 6.19453 2.93955 6.06788C3.49872 6.06379 5.94252 6.0597 8.98278 6.0597H15.0302L15.0384 6.10465C15.1047 6.4315 16.6621 18.141 16.6911 18.5046ZM6.1372 4.82175V4.35598C6.1372 4.04139 6.17862 3.6083 6.22418 3.40811C6.46856 2.38669 7.30111 1.5573 8.34076 1.29173C8.77568 1.1855 9.48811 1.22228 9.92303 1.37753H9.92717C10.3828 1.5287 10.7556 1.77384 11.0994 2.14972C11.6544 2.74623 11.8408 3.28145 11.8408 4.27018V4.82175H6.1372Z" fill="black"></path></svg></span></a><span class="w-[18px] h-[18px] text-qblack rounded-full bg-qh4-pink absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">15</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-widget-wrapper w-full bg-qh4-pink h-[60px] relative z-30  quomodo-shop-nav-bar lg:block hidden">
+                <div class="container-x mx-auto h-full">
+                    <div class="w-full h-full relative">
+                        <div class="w-full h-full flex justify-between items-center">
+                            <div class="category-and-nav flex xl:space-x-7 space-x-3 items-center">
+                                <div class="nav">
+                                    <ul class="nav-wrapper flex xl:space-x-10 space-x-5">
+                                        @if (lstCateMain != null)
+                                        {
+                                            @foreach (var items in lstCateMain)
+                                            {
+                                                <li>
+                                                    <span class="flex items-center text-sm text-qblack font-600 cursor-pointer ">
+                                                        <span>@items.Title</span>
+                                                        @*<span class="ml-1.5 ">
+                                                <svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect>
+                                                <rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect>
+                                                </svg>
+                                                </span>*@
+                                                    </span>
+                                                    <div class="sub-menu w-full absolute left-0 top-[60px]">
+                                                        <div class="mega-menu-wrapper w-full bg-white p-[30px] flex justify-between items-center " style="min-height: 295px; box-shadow: rgba(0, 0, 0, 0.14) 0px 15px 50px 0px;">
+                                                            <div class="categories-wrapper flex-1 h-full flex justify-around -ml-[70px]">
+                                                                @{
+                                                                    List<TeddyBear.Models.Category> lstCateSub = TeddyBear.Repository.CategoryRepo.Instance().GetCate(items.Id);
+                                                                }
+                                                                @if (lstCateSub != null)
+                                                                {
+                                                                    @foreach (var itemSub in lstCateSub)
+                                                                    {
+                                                                        <div>
+                                                                            <div class="category">
+                                                                                <a href="/Categories?id=@itemSub.Id"><h1 class="text-[13px] font-700 text-qblack uppercase mb-[13px]">@itemSub.Title</h1></a>
+                                                                            </div>
+                                                                            <div class="category-items">
+                                                                                <ul class="flex flex-col space-y-2">
+                                                                                    @{
+                                                                                        List<TeddyBear.Models.Category> lstCate = TeddyBear.Repository.CategoryRepo.Instance().GetCate(itemSub.Id);
+                                                                                    }
+                                                                                    @if (lstCate != null)
+                                                                                    {
+                                                                                        @foreach (var item in lstCate)
+                                                                                        {
+                                                                                            <li><a href="#"><span class="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">@item.Title</span></a></li>
+
+                                                                                        }
+                                                                                    }
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    }
+                                                                }
+                                                            </div>
+                                                            <div class="thumbnil w-[348px] h-full"><div class="w-full h-[235px]"><img src="~/client/assets/images/mega-menu-thumb.jpg" alt="" class="w-full h-full object-contain"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+                                        }
+
+
+                                        <li><a href="/about"><span class="flex items-center text-sm text-qblack font-600 cursor-pointer "><span>About</span></span></a></li>
+                                        <li><a href="/blogs"><span class="flex items-center text-sm text-qblack font-600 cursor-pointer "><span>Blog</span></span></a></li>
+                                        <li><a href="/contact"><span class="flex items-center text-sm text-qblack font-600 cursor-pointer "><span>Contact</span></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="become-seller-btn  w-[161px] h-[40px]">
+                                <a href="/become-saller">
+                                    <div class="black-btn flex justify-center items-center cursor-pointer h-full">
+                                        <div class="flex space-x-2 items-center">
+                                            <span class="text-sm font-600">Become a Seller</span><span>
+                                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="1.08984" width="6.94106" height="1.54246" transform="rotate(45 1.08984 0)"></rect>
+                                                    <rect x="6" y="4.9082" width="6.94106" height="1.54246" transform="rotate(135 6 4.9082)">
+                                                    </rect>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+
+        <div class="discount-banner w-full h-[307px] bg-cover flex justify-center items-center " style="background: url(&quot;/client/assets/images/discount-banner-1.jpg&quot;) 0% 0% / cover no-repeat;">
+            <div>
+                <div data-aos="fade-up" class="aos-init aos-animate"><h1 class="sm:text-3xl text-xl font-700 text-qblack mb-2 text-center">Get <span class="mx-1 text-qyellow">20%</span> Off Discount Coupon</h1><p class="text-center sm:text-[18px] text-sm font-400">by Subscribe our Newsletter</p></div>
+                <div data-aos="fade-right" class="sm:w-[543px] w-[300px] h-[54px] flex mt-8 aos-init aos-animate">
+                    <div class="flex-1 bg-white pl-4 flex space-x-2 items-center h-full focus-within:text-qyellow text-qblack">
+                        <span>
+                            <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 14H2C1.4 14 1 13.6 1 13V2C1 1.4 1.4 1 2 1H15C15.6 1 16 1.4 16 2V13C16 13.6 15.6 14 15 14Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 4L8.5 8.5L14 4" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </span>
+                        <input type="email" name="email" class="w-full h-full focus:outline-none text-sm placeholder:text-xs placeholder:text-qblack text-qblack font-400 tracking-wider" placeholder="EMAIL ADDRESS">
+                    </div>
+                    <button type="button" class="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-600">Get the Coupon</button>
+                </div>
+            </div>
+        </div>
+        <footer class="footer-section-wrapper bg-white print:hidden">
+            <div class="container-x block mx-auto pt-[56px]">
+                <div class="w-full flex flex-col items-center mb-[50px]">
+                    <div class="mb-[40px]">
+                        <a href="/"><img width="152" height="36" src="~/client/assets/images/logo-4.svg" alt="logo"></a>
+                    </div><div class="w-full h-[1px] bg-[#E9E9E9]"></div>
+                </div><div class="lg:flex justify-between mb-[50px]">
+                    <div class="lg:w-[424px]  ml-0 w-full mb-10 lg:mb-0">
+                        <h1 class="text-[18] font-500 text-[#2F2F2F] mb-5">About Us</h1>
+                        <p class="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">We know there are a lot of threa developers our but we pride into a firm in the industry.</p>
+                    </div><div class="flex-1 lg:flex"><div class="lg:w-1/3 w-full mb-10 lg:mb-0"><div class="mb-5"><h6 class="text-[18] font-500 text-[#2F2F2F]">Feature</h6></div><div><ul class="flex flex-col space-y-4 "><li><a href="/about"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">About Us</span></a></li><li><a href="/terms-condition"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">Terms Condition</span></a></li><li><a href="/all-products"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">Best Products</span></a></li></ul></div></div><div class="lg:w-1/3 lg:flex lg:flex-col items-center w-full mb-10 lg:mb-0 "><div><div class="mb-5"><h6 class="text-[18] font-500 text-[#2F2F2F]">General Links</h6></div><div><ul class="flex flex-col space-y-4 "><li><a href="/blogs"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">Blog</span></a></li><li><a href="/tracking-order"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">Tracking Order</span></a></li><li><a href="/become-saller"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">Become Seller</span></a></li></ul></div></div></div><div class="lg:w-1/3 lg:flex lg:flex-col items-center w-full mb-10 lg:mb-0"><div><div class="mb-5"><h6 class="text-[18] font-500 text-[#2F2F2F]">Helpful</h6></div><div><ul class="flex flex-col space-y-4 "><li><a href="/flash-sale"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">Flash Sale</span></a></li><li><a href="/faq"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">FAQ</span></a></li><li><a href="/about"><span class="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">Support</span></a></li></ul></div></div></div></div>
+                </div><div class="bottom-bar border-t border-qgray-border lg:h-[82px] lg:flex justify-between items-center">
+                    <div class="flex lg:space-x-5 justify-between items-center mb-3"><div class="flex space-x-5 items-center"><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="fill-current text-qgray hover:text-qblack" xmlns="http://www.w3.org/2000/svg"><path d="M12.1016 4.90039C12.6538 4.90039 13.1016 4.45268 13.1016 3.90039C13.1016 3.34811 12.6538 2.90039 12.1016 2.90039C11.5493 2.90039 11.1016 3.34811 11.1016 3.90039C11.1016 4.45268 11.5493 4.90039 12.1016 4.90039Z"></path><path d="M8 12C5.8 12 4 10.2 4 8C4 5.8 5.8 4 8 4C10.2 4 12 5.8 12 8C12 10.2 10.2 12 8 12ZM8 6C6.9 6 6 6.9 6 8C6 9.1 6.9 10 8 10C9.1 10 10 9.1 10 8C10 6.9 9.1 6 8 6Z"></path><path d="M12 16H4C1.9 16 0 14.1 0 12V4C0 1.9 1.9 0 4 0H12C14.1 0 16 1.9 16 4V12C16 14.1 14.1 16 12 16ZM4 2C3.1 2 2 3.1 2 4V12C2 13 3 14 4 14H12C12.9 14 14 12.9 14 12V4C14 3.1 12.9 2 12 2H4Z"></path></svg></a><a href="#"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" class="fill-current text-qgray hover:text-qblack" xmlns="http://www.w3.org/2000/svg"><path d="M3 16V9H0V6H3V4C3 1.3 4.7 0 7.1 0C8.3 0 9.2 0.1 9.5 0.1V2.9H7.8C6.5 2.9 6.2 3.5 6.2 4.4V6H10L9 9H6.3V16H3Z"></path></svg></a><a href="#"><svg width="16" height="12" viewBox="0 0 16 12" fill="none" class="fill-current text-qgray hover:text-qblack" xmlns="http://www.w3.org/2000/svg"><path d="M15.8 2.8C15.6 1.5 15 0.6 13.6 0.4C11.4 8.9407e-08 8 0 8 0C8 0 4.6 8.9407e-08 2.4 0.4C1 0.6 0.3 1.5 0.2 2.8C0 4.1 0 6 0 6C0 6 0 7.9 0.2 9.2C0.4 10.5 1 11.4 2.4 11.6C4.6 12 8 12 8 12C8 12 11.4 12 13.6 11.6C15 11.3 15.6 10.5 15.8 9.2C16 7.9 16 6 16 6C16 6 16 4.1 15.8 2.8ZM6 9V3L11 6L6 9Z"></path></svg></a></div><span class="sm:text-base text-[10px] text-qgray font-300">©2022<a href="https://quomodosoft.com/" target="_blank" rel="noreferrer" class="font-500 text-qblack mx-1">Quomodosoft</a>All rights reserved</span></div>
+                    <div class=""><a href="#"><img width="318" height="28" src="~/client/assets/images/payment-getways.png" alt="payment-getways"></a></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
